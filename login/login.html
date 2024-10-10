@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Login Authentication</title>
+</head>
+<body>
+    <div class="container">
+        <div id="loginContainer">
+            <h2><center>Login</center></h2><br>
+            <div class="form-group">
+                <label for="loginEmail">Email</label>
+                <input type="email" class="form-control" id="loginEmail" required />
+                <small id="loginErrorMessage" class="text-danger"></small>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" class="form-control" id="loginPassword" required />
+                <small id="loginPasswordErrorMessage" class="text-danger"></small>
+                <small id="alreadyExistErrorMessage" class="text-danger"></small>
+            </div>
+            <center><button class="btn btn-primary" onclick="login()">Sign in</button></center><br>
+            <p>Don't have an account? <a href="#" onclick="showRegisterForm()">Register Here</a></p>
+        </div>
+
+        <div id="registerContainer" class="d-none">
+            <center><h2>Register</h2></center><br>
+            <div class="form-group">
+                <label for="registerEmail">Email</label>
+                <input type="email" class="form-control" id="registerEmail" required />
+                <small id="registerErrorMessage" class="text-danger"></small>
+            </div>
+            <div class="form-group">
+                <label for="registerPassword">Password</label>
+                <input type="password" class="form-control" id="registerPassword" required />
+                <small id="registerPasswordErrorMessage" class="text-danger"></small>
+            </div>
+            <center>
+            <button class="btn btn-primary" onclick="register()">Register</button></center><br>
+
+            <p>Already have an account? <a href="#" onclick="showLoginForm()">Login</a></p>
+            <small id="registrationMessage" class="text-success d-none"></small>
+        </div>
+
+        <div id="successDashboard" class="d-none">
+            <h2>Welcome,</h2><center><span id="loggedInUser"></span>!</center><br>
+            <center><p>You've successfully logged in!</p></center>
+            <center>
+            <button class="btn btn-primary" onclick="logout()">Logout</button></center>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
